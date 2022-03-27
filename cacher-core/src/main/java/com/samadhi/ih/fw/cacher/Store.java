@@ -34,9 +34,9 @@ public interface Store<K, V> extends AutoCloseable {
         }
     }
 
-    SingleStoreResultManager<V> getStoreEntry(K key);  //Nothing but : CacheGetResult<V> GET(K key);
+    SingleStoreResultManager<V> getStoreEntry(K key);
 
-    MultiStoreResultManager<K, V> getStoreEntries(Set<? extends K> keys);  //Nothing but : MultiGetResult<K, V> GET_ALL(Set<? extends K> keys);
+    MultiStoreResultManager<K, V> getStoreEntries(Set<? extends K> keys);
 
     default Map<K, V> getAll(Set<? extends K> keys) {
         var storeEntries = getStoreEntries(keys);
